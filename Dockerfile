@@ -6,6 +6,6 @@ FROM python:3.9
 RUN apt update && \
 apt install -y  mariadb-client fish 
 
-RUN pip install flask
+RUN pip install flask pymysql python-dotenv
 
 EXPOSE 80

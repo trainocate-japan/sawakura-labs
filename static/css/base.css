@@ -1,0 +1,28 @@
+body {
+    color: #635b5b;
+    width: 70%; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1 {
+    border: solid 4px #ff8442;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: solid 2px #ff8442;
+}
+table th, table td {
+    border: dashed 1px #ff8442;
+    padding: 10px;
+}
+
+table th {
+    background-color: #f5dbcd;
+}

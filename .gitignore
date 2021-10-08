@@ -3,3 +3,4 @@
 .venv/
 dbdata/
 __pycache__/
+.env
