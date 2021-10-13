@@ -35,3 +35,5 @@ def display_all_courses():
         connection.close()
 
     return render_template("index.html", title=title, courses=courses)
+
+app.run(port=80,debug=False)
