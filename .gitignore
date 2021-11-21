@@ -3,3 +3,5 @@
 .venv/
 dbdata/
 __pycache__/
+vscode-*.js
+
