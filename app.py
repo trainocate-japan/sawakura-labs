@@ -36,4 +36,7 @@ def display_all_courses():
 
     return render_template("index.html", title=title, courses=courses)
 
-app.run(port=80,debug=False)
+
+if __name__ == '__main__':
+    print(os.getenv("db_password"))
+    app.run(port=80, host="0.0.0.0", debug=False)
