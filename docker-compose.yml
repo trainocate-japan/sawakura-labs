@@ -6,7 +6,7 @@ services:
 #      args:
 #        project_directory: "/projects/"
     ports:
-      - "5000:80"
+      - "8080:80"
 #    volumes:
 #      - ".:/tmp"
     links:
@@ -14,7 +14,7 @@ services:
     environment:
       TZ: "Asia/Tokyo"
       FLASK_ENV: "development"
-    command: "sleep infinity"
+    command: "python3 app.py"
 
   db:
     # for compatibility with mysql 5.6

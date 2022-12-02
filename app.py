@@ -57,16 +57,16 @@ def set_db_host():
     os.environ['db_host'] = dbhost
 
     connection = get_connection(dbhost)
-    create_table = "create table IF not exists contents (id INT(20) AUTO_INCREMENT PRIMARY KEY, course_code VARCHAR(16) NOT NULL, course_name VARCHAR(120) NOT NULL) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
+    create_table = "create table IF not exists contents (id INT(20) AUTO_INCREMENT PRIMARY KEY, course_code VARCHAR(16) NOT NULL, course_name VARCHAR(120) NOT NULL, duration SMALLINT NOT NULL) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
     with connection.cursor() as cursor:
         cursor.execute(create_table)
-    contents = "INSERT INTO contents (id, course_code, course_name) VALUES (%s, %s, %s);"
+    contents = "INSERT INTO contents (id, course_code, course_name, duration) VALUES (%s, %s, %s, %s);"
     with connection.cursor() as cursor:
-        cursor.execute(contents, (0, 'NFC0313G', 'クラウドコンピューティング概要'))
-        cursor.execute(contents, (0, 'NFC0314G', 'ビジネスパーソンのためのクラウド入門'))
-        cursor.execute(contents, (0, 'NFC0267G', 'クラウドアーキテクト・ファーストステップ'))
-        cursor.execute(contents, (0, 'NFC0295G', '実践クラウドデザインパターン'))
-        cursor.execute(contents, (0, 'NFC0477G', 'さわってわかるクラウド入門'))
+        cursor.execute(contents, (0, 'NFC0313G', 'クラウドコンピューティング概要', 1))
+        cursor.execute(contents, (0, 'NFC0314G', 'ビジネスパーソンのためのクラウド入門', 1))
+        cursor.execute(contents, (0, 'NFC0267G', 'クラウドアーキテクト・ファーストステップ', 2))
+        cursor.execute(contents, (0, 'NFC0295G', '実践クラウドデザインパターン', 2))
+        cursor.execute(contents, (0, 'NFC0477G', 'さわってわかるクラウド入門', 1))
     connection.commit()
 
     cursor.close()
