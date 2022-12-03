@@ -13,7 +13,7 @@ services:
       - "db"
     environment:
       TZ: "Asia/Tokyo"
-      FLASK_ENV: "development"
+      FLASK_DEBUG: "development"
     command: "python3 app.py"
 
   db:
